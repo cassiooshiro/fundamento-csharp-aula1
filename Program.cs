@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace dotnetcore
 {
@@ -27,10 +28,36 @@ namespace dotnetcore
         // - Utilizar Classe Pessoa
         static void Main(string[] args)
         {
-            Console.WriteLine("Iniciando Programa");
+            var xNomeAluno1 = "Zuqui";
+            var xNotasAluno1 = new List<int>() {6, 5, 6};
 
-            var xNotasZuqui = new int[] { 7, 6, 5, 3 };
-            var xNotasBronza = new int[] { 8, 9, 10, 8 };
+            var xNomeAluno2 = "Bronza";
+            var xNotasAluno2 = new List<int>() {5, 7, 8};
+
+            
+            var xMediaAluno1 = CalcularMedia(xNotasAluno1);
+            var xMediaAluno2 = CalcularMedia(xNotasAluno2);            
+            
+            if (xMediaAluno1 > 7)
+                Console.WriteLine(xNomeAluno1 + " Passou!");
+            else
+                Console.WriteLine(xNomeAluno1 + " Não Passou!");
+
+            if (xMediaAluno2 > 7)
+                Console.WriteLine(xNomeAluno2 + " Passou!");
+            else
+                Console.WriteLine(xNomeAluno2 + " Não Passou!");
+        }
+
+        public static float CalcularMedia(List<int> pNotas)
+        {
+            float xMedia = 0;
+            foreach (var xNota in pNotas)
+            {
+                xMedia = xMedia + xNota;
+            }
+
+            return xMedia;
         }
     }
 }
