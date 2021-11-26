@@ -82,6 +82,12 @@ namespace dotnetcore
             var xQtdadePessoasMaiores = xPessoas.Where(p => p.Idade > 18).Count();
             Console.WriteLine("Quantidade de pessoas maiores: " + xQtdadePessoasMaiores);
 
+            var xMaiorIdade = xPessoas.Select(p => p.Idade).Max();
+            Console.WriteLine("Maior idade: " + xMaiorIdade);
+
+            var xMenorIdade = xPessoas.Select(p => p.Idade).Min();
+            Console.WriteLine("Menor idade: " + xMenorIdade);
+
         }
 
         public static float CalcularMedia(List<int> pNotas)
